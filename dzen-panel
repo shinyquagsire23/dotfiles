@@ -1,0 +1,2 @@
+#!/bin/bash
+python2 ~/.config/bspwm/panel/dzen-panel.py | dzen2 -fn "lemon-10" -ta l -bg '#3c3540' &
