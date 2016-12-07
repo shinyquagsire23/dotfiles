@@ -1,0 +1,72 @@
+URxvt.perl-ext-common: tabbedex,clipboard,url-select,selection-to-clipboard
+URxvt.tabbed.new-button: false
+!URxvt*font:     -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-2
+!URxvt*boldFont: -*-terminus-bold-*-*-*-12-*-*-*-*-*-iso8859-2
+!urxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*boldFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*italicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*bolditalicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+urxvt.font: xft:lemon:pixelsize=10
+urxvt.boldFont: xft:lemon:pixelsize=10
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.imLocale: en_US.utf8
+URxvt*termName: rxvt-unicode-256color
+
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+
+xterm*wideFont: -misc-fixed-medium-r-normal-ja-13-120-75-75-c-120-iso10646-1
+  
+! Scrollbar
+URxvt.scrollBar:            false
+ 
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+ 
+! Pointer
+URxvt.pointerBlank:         true
+
+URxvt*termName: rxvt
+URxvt.termName: rxvt
+
+dzen2.font:       -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-2
+! special
+*.foreground:   #f5e2fb
+*.background:   #3c3540
+*.cursorColor:  #f5e2fb
+
+! black
+*.color0:       #3c3441
+*.color8:       #514556
+
+! red
+*.color1:       #a66342
+*.color9:       #cc8866
+
+! green
+*.color2:       #9550c7
+*.color10:      #975ebd
+
+! yellow
+*.color3:       #de8a5f
+*.color11:      #f09d73
+
+! blue
+*.color4:       #9058a6
+*.color12:      #ac73bf
+
+! magenta
+*.color5:       #8e40c2
+*.color13:      #9757c2
+
+! cyan
+*.color6:       #69388c
+*.color14:      #7f4ca6
+
+! white
+*.color7:       #776680
+*.color15:      #bd9fc7
+

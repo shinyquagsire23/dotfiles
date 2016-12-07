@@ -1,0 +1,130 @@
+#
+# bspwm hotkeys
+#
+
+super + alt + Escape
+	bspc quit
+
+super + w
+	bspc node -c
+	
+super + k
+	bspc node -k
+
+super + t
+	bspc desktop -l next
+
+super + b
+	bspc desktop -B
+
+super + {t,shift + t,s,f}
+    bspc node -t '~{tiled,pseudo_tiled,floating,fullscreen}'
+
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+#super + apostrophe
+#	bspc node -s last
+
+super + {o,i}
+	bspc control --record-history off; \
+	bspc node {older,newer} -f; \
+	bspc control --record-history on
+
+super + y
+	bspc node -w last.manual
+
+super + m
+	bspc node -s biggest
+
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {left,down,up,right}
+
+super + {_,shift + }c
+	bspc node -f {next,prev}
+
+super + {comma,period}
+	bspc desktop -C {backward,forward}
+
+super + bracket{left,right}
+    bspc desktop -f {prev,next}.local
+
+#ctrl + alt + {left,right}
+#    bspc desktop -f {prev,next}.local
+
+super + {semicolon,apostrophe}
+    bspc desktop -f {prev,next}.local
+
+super + ctrl + {h,j,k,l}
+	bspc node -p {left,down,up,right}
+
+super + ctrl + {_,shift + }space
+	bspc {node -p cancel,desktop -c}
+
+super + alt + {h,j,k,l}
+	bspc node -e {left -10,down +10,up -10,right +10}
+
+super + alt + shift + {h,j,k,l}
+	bspc node -e {right -10,up +10,down -10,left +10}
+
+super + ctrl + {1-9}
+	bspc node -r 0.{1-9}
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} ^{1-9,10}
+
+XF86AudioRaiseVolume
+    pulseaudio-ctl up
+
+XF86AudioLowerVolume
+    pulseaudio-ctl down
+
+XF86AudioMute
+    pulseaudio-ctl mute
+    pulseaudio-ctl mute-input
+
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+Print
+    scrot
+
+super + Print
+    scrot -s
+
+#~button1
+#	bspc pointer -g focus
+
+#super + button{1-3}
+#	bspc pointer -g {move,resize_side,resize_corner}
+
+#super + !button{1-3}
+#	bspc pointer -t %i %i
+
+#super + @button{1-3}
+#	bspc pointer -u
+
+#
+# wm independent hotkeys
+#
+
+super + Return
+	export LANG=en_US.UTF-8 & urxvt -cd ~
+#urxvt -cd ~
+
+super + space
+	nmcli_dmenu
+
+super + @backslash
+	dmenu_run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+super + Print
+	scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/'
+
