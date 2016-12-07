@@ -1,0 +1,50 @@
+#! /bin/sh
+
+pkill dzen2
+pkill sxhkd
+dzen-panel &
+sxhkd &
+
+xrandr --dpi 110
+
+bspc config border_width           4
+bspc config window_gap             18
+bspc config top_padding            10
+
+bspc config split_ratio            0.52
+bspc config borderless_monocle     true
+bspc config gapless_monocle        true
+bspc config pointer_follows_monitor       true
+bspc config focus_follows_pointer  true
+bspc config pointer_modifier 	   super
+bspc config pointer_action1        move
+bspc config honor_size_hints       true
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10 11
+
+bspc rule -a Gimp state=floating follow=on
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Wine state=floating
+bspc rule -a Steam state=floating
+bspc rule -a BEH state=floating
+bspc rule -a beh state=floating
+bspc rule -a mgba state=floating
+bspc rule -a mgba-qt state=floating
+bspc rule -a decaf-sdl state=floating
+
+bspc subscribe desktop_focus | while read line; do bspc node -f pointed; done
+bspc subscribe node_state | while read line; do bspc node -f pointed; done
+
+#curl -s 'http://localhost:9999/get_all_playlists' > ~/.mpd/playlists/all.m3u
+
+#Collection of dumb hacks
+bspjavafix
+wmname LG3D
+
+#Start things up
+feh --bg-fill ~/Pictures/nickpurple.png
+compton -b --config ~/.config/compton.conf &
+dzen-panel
+

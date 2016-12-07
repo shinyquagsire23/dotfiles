@@ -1,0 +1,4 @@
+#define spkr_lesser_width 8
+#define spkr_lesser_height 8
+static unsigned char spkr_lesser_bits[] = {
+   0x08, 0x0c, 0x0f, 0x2f, 0x2f, 0x0f, 0x0c, 0x08 };
